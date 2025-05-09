@@ -79,6 +79,10 @@ func (sm *SessionManager) DestroySession(token string) error {
 	return sm.store.Delete(token)
 }
 
+func (sm *SessionManager) SessionTimeout() time.Duration {
+    return sm.sessionTTL
+}
+
 func (sm *SessionManager) CookieName() string {
 	return sm.cookieName
 }
